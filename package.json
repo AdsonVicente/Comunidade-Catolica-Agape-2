@@ -4,6 +4,8 @@
   "description": "site criado com intuito de ajudar a comunidade católica ágape em sua missão de fé.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.express.js",
     "dev:server": "nodemon",
     "dev:console": "node -r tsconfig-paths/register -r sucrase/register src/index.ts",
     "test": "vitest",
