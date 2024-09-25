@@ -48,7 +48,10 @@ describe('Repositório Prisma: Evento', () => {
                 descricao: descricaoEventoValida,
                 local: localEventoValido,
                 data: dataEventoValida,
-                horario: horarioEventoValido
+                horario: horarioEventoValido,
+                banner: "https://exemplo.com/banner.jpg", // Adicione a propriedade banner
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
                 
             },{
                 id: UUIDValido,
@@ -56,7 +59,10 @@ describe('Repositório Prisma: Evento', () => {
                 descricao: descricaoEventoValida,
                 local: localEventoValido,
                 data: dataEventoValida,
-                horario: horarioEventoValido
+                horario: horarioEventoValido,
+                banner: "https://exemplo.com/banner.jpg", // Adicione a propriedade banner
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
                 
             }];
 
@@ -88,7 +94,9 @@ describe('Repositório Prisma: Evento', () => {
                 local: localEventoValido,
                 data: dataEventoValida,
                 horario: horarioEventoValido,
-                banner:"https://google.com"
+                banner:"https://google.com",
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
             };
 
             prismaMock.evento.create.mockResolvedValue(eventoPrisma);
@@ -106,7 +114,9 @@ describe('Repositório Prisma: Evento', () => {
                 descricao: descricaoEventoValida,
                 local: localEventoValido,
                 data: dataEventoValida,
-                horario: horarioEventoValido
+                horario: horarioEventoValido,
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
                 }    
             });  
 
@@ -126,7 +136,9 @@ describe('Repositório Prisma: Evento', () => {
                 local: localEventoValido,
                 data: dataEventoValida,
                 horario: horarioEventoValido,
-                banner:"https://google.com"
+                banner:"https://google.com",
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
             };
 
             prismaMock.evento.update.mockResolvedValue(eventoPrisma);
@@ -158,7 +170,9 @@ describe('Repositório Prisma: Evento', () => {
                 local: localEventoValido,
                 data: dataEventoValida,
                 horario: horarioEventoValido,
-                banner:"https://google.com"
+                banner:"https://google.com",
+                createdAt: new Date(), // Adicione a data de criação
+                updatedAt: new Date() // Adicione a data de atualização
                 
             };
 

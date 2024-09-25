@@ -19,7 +19,7 @@ class InserirConteudoExpressController extends ExpressController {
             logger.info(conteudoInputDTO)
 
             // Caminho relativo para salvar no banco
-            const bannerPath = request.file ? `uploads/${request.file.filename}` : null;
+            const bannerPath = request.file ? `uploads/${request.file.filename}` : 'default-banner.png'; // ou lançar um erro
 
             const conteudoDTO: CriarConteudoProps = {
                 ...conteudoInputDTO,

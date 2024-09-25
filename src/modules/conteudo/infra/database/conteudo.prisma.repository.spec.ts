@@ -48,9 +48,9 @@ describe('Repositório Prisma: Conteudo', () => {
                 descricao: descricaoEventoValida,
                 publicadoEm: new Date(), // Adicionei as propriedades faltantes
                 atualizadoEm: new Date(),
-                categoriaId: UUIDValido, // Ajuste conforme necessário
+                categoria: UUIDValido, // Ajuste conforme necessário
                 viewCount: 0, // Ajuste conforme necessário
-                categoria: Categoria.recuperar, // Adicionei a propriedade faltante
+                category: "Categoria Teste", // Adicionei a propriedade faltante
                 autor: "Deivid Pontes",
                 banner: "https://google.com"
             },
@@ -60,9 +60,9 @@ describe('Repositório Prisma: Conteudo', () => {
                 descricao: descricaoEventoValida,
                 publicadoEm: new Date(), // Adicionei as propriedades faltantes
                 atualizadoEm: new Date(),
-                categoriaId: UUIDValido, // Ajuste conforme necessário
+                categoria: UUIDValido, // Ajuste conforme necessário
                 viewCount: 0, // Ajuste conforme necessário
-                categoria: Categoria.recuperar, // Adicionei a propriedade faltante
+                category: "Categoria Teste", // Adicionei a propriedade faltante
                 autor: "Deivid Pontes",
                 banner: "https://google.com"
             }];
@@ -94,7 +94,10 @@ describe('Repositório Prisma: Conteudo', () => {
                 descricao: descricaoEventoValida,
                 categoria: "categoria teste",
                 autor:"Deivid Pontes",
-                banner:"https://aajajajjaja.com"
+                banner:"https://aajajajjaja.com",
+                publicadoEm: new Date(), // Adicione a data de publicação
+                atualizadoEm: new Date(), // Adicione a data de atualização
+                viewCount: 0 // Adicione a contagem de visualizações
             };
 
             prismaMock.conteudo.create.mockResolvedValue(conteudoPrisma);
@@ -129,7 +132,10 @@ describe('Repositório Prisma: Conteudo', () => {
                 descricao: descricaoEventoValida,
                 categoria: "categoria teste",
                 autor:"Deivid Pontes",
-                banner:"https://aajajajjaja.com"
+                banner:"https://aajajajjaja.com",
+                publicadoEm: new Date(), // Adicione a data de publicação
+                atualizadoEm: new Date(), // Adicione a data de atualização
+                viewCount: 0 // Adicione a contagem de visualizações
             };
 
             prismaMock.conteudo.update.mockResolvedValue(conteudoPrisma);
@@ -143,9 +149,14 @@ describe('Repositório Prisma: Conteudo', () => {
             expect(prismaMock.conteudo.update).toBeCalledWith({
                 where: {id : conteudo.id},
                 data: {
-                    titulo: tituloEventoValido,
+                titulo: tituloEventoValido,
                 descricao: descricaoEventoValida,
-                categoria: "categoria teste"
+                categoria: "categoria teste",
+                autor: "Deivid Pontes", // Adicione as propriedades necessárias
+                banner: "https://aajajajjaja.com", // Adicione as propriedades necessárias
+                publicadoEm: conteudoPrisma.publicadoEm, // Mantenha a propriedade
+                atualizadoEm: new Date(), // Atualize com a data atual
+                viewCount: conteudoPrisma.viewCount // Mantenha a contagem de visualizações
                 }
             });  
 
@@ -164,7 +175,10 @@ describe('Repositório Prisma: Conteudo', () => {
                 descricao: descricaoEventoValida,
                 categoria: "categoria teste",
                 autor:"Deivid Pontes",
-                banner:"https://aajajajjaja.com"
+                banner:"https://aajajajjaja.com",
+                publicadoEm: new Date(), // Adicione a data de publicação
+                atualizadoEm: new Date(), // Adicione a data de atualização
+                viewCount: 0 // Adicione a contagem de visualizações
             };
 
             prismaMock.conteudo.delete.mockResolvedValue(conteudoPrisma);

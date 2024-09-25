@@ -32,7 +32,8 @@ describe('Caso de Uso: Recuperar Conteudo por ID', () => {
             descricao: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
             categoria: "categoria teste",
             autor:"Deivid Pontes",
-                banner:"https://aajajajjaja.com"
+            banner:"https://aajajajjaja.com",
+            publicadoEm: new Date() // ou a data que desejar
         };
 
         conteudoRepositorioMock.existe.mockResolvedValue(true);

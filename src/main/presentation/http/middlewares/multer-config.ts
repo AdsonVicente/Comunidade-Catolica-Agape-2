@@ -22,7 +22,7 @@ const upload = multer({
         if (allowedTypes.includes(file.mimetype)) {
             cb(null, true);
         } else {
-            cb(new Error('Tipo de arquivo não permitido.'), false);
+            console.log('tipo de arquivo não permitido')
         }
     }
 });

@@ -15,7 +15,7 @@ model Evento {
   local String @db.VarChar(50)
   data String @db.VarChar(15)
   horario String @db.VarChar(8)
-  banner        String
+  banner String? // Permitir null
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   inscricoes Inscricao[]
@@ -28,7 +28,7 @@ model Conteudo {
   titulo String @db.VarChar(100)
   descricao String @db.VarChar(500)
   autor        String
-  banner       String
+  banner String? // Permitir null
   publicadoEm  DateTime  @default(now())
   atualizadoEm DateTime  @updatedAt
   categoria String @db.Uuid

@@ -37,20 +37,6 @@ class InscricaoMap {
         });
     }
 
-    public static fromPrismaModelToDomain2(InscricaoPrisma: Prisma.InscricaoCreateInput): Inscricao {
-      return InscricaoMap.toDomain({
-        id: InscricaoPrisma.id,
-        nome: InscricaoPrisma.nome,
-        email: InscricaoPrisma.email,
-        grupo: InscricaoPrisma.grupo,
-        setor: InscricaoPrisma.setor,
-        evento: EventoMap.fromPrismaModelToDomain(InscricaoPrisma.evento.create as Prisma.EventoCreateInput),
-        telefone: InscricaoPrisma.telefone,
-        idade: InscricaoPrisma.idade
-      });
-  }
-
-
 }
 
 export { InscricaoMap };
